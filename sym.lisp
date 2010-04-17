@@ -75,7 +75,7 @@
 
 (defmacro w/sym (&body body)
   "Create a symbolic evaluation environment"
-  `(progn
+  `(flet ((simp (expr) (simp-socket expr)))
      (maxima-start)
      (let ((result
 	    (progn

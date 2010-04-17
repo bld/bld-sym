@@ -7,7 +7,7 @@
     :version "0.0.1"
     :maintainer "Benjamin L. Diedrich <ben@solarsails.info>"
     :license "MIT"
-    :description "Simplify scalar symbolic math expressions in Lisp."
+    :description "Scalar symbolic arithmetic"
     :components 
     ((:file "sym"))
-    :depends-on ("bld-maxima"))
+    :depends-on ("bld-maxima" "bld-num"))

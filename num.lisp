@@ -28,7 +28,7 @@
 (defmethod =n2 ((n1 number) (n2 number))
   (= n1 n2))
 
-(defmethod >n2 ((n1 number)(n2 number))
+(defmethod >n2 ((n1 number) (n2 number))
   (> n1 n2))
 
 (defmethod absn ((n number))
@@ -70,5 +70,5 @@
 (defmethod signumn ((n number))
   (signum n))
 
-(defmethod max2n ((n1 number)(n2 number))
+(defmethod max2n ((n1 number) (n2 number))
   (max n1 n2))
