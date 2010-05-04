@@ -6,8 +6,8 @@
     :author "Benjamin L. Diedrich <ben@solarsails.info>"
     :version "0.0.1"
     :maintainer "Benjamin L. Diedrich <ben@solarsails.info>"
-    :license "MIT"
+    :license "GPLv2"
     :description "Scalar symbolic arithmetic"
-    :components 
-    ((:file "sym"))
-    :depends-on ("bld-maxima" "bld-num"))
+    :depends-on ("bld-maxima-pkg" "bld-num")
+    :components ((:file "sym")))
+
