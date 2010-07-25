@@ -1,6 +1,6 @@
 (defpackage :bld-sym
-  (:use :cl :bld-maxima-pkg :bld-num)
-  (:export :n2+ :n2- :negn :*n2 :/n2 :/n1 :exptn :=n2 :>n2 :absn :sinn :cosn :tann :expn :logn :sqrtn :sinhn :coshn :tanhn :atann :atan2n :signumn :max2n))
+  (:use :cl :bld-maxima :bld-num)
+  (:export :n2+ :n2- :negn :*n2 :/n2 :/n1 :exptn :=n2 :>n2 :absn :sinn :cosn :tann :expn :logn :sqrtn :sinhn :coshn :tanhn :atann :atan2n :signumn :max2n :w/sym))
 
 (in-package :bld-sym)
 
@@ -72,3 +72,13 @@
 
 (defmethod max2n (n1 n2)
   (simp `(max ,n1 ,n2)))
+
+(defmacro w/sym (&body body)
+  "Create a symbolic evaluation environment"
+  `(flet ((simp (expr) (simp-socket expr)))
+     (maxima-start)
+     (let ((result
+	    (progn
+	      ,@body)))
+       (maxima-shutdown)
+       result)))
